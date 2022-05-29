@@ -21,12 +21,12 @@ import { IUserNoId, User } from './users.entity';
 
 import status404 from './schema/controller.404';
 
-import { AuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @ApiTags('Users')
 @ApiBearerAuth('token')
 @Controller('users')
-@UseGuards(AuthGuard)
+@UseGuards(JwtAuthGuard)
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
 

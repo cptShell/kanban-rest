@@ -22,12 +22,12 @@ import { ITask, Task } from './tasks.entity';
 import TaskCreate from './schema/controller.create';
 import TaskUpdate from './schema/controller.update';
 
-import { AuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @ApiTags('Tasks')
 @ApiBearerAuth('token')
 @Controller('/boards/:boardId/columns/:columnId/tasks/')
-@UseGuards(AuthGuard)
+@UseGuards(JwtAuthGuard)
 export class TasksController {
   constructor(private readonly taskService: TasksService) {}
 

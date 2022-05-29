@@ -50,6 +50,7 @@ $user: git push heroku source:master
 
 - `Swagger Docs` (`/docs` route)
 - `Auth` (`/` route)
+  - `GET /authenticated-user` - authenticated user
   - `POST /signup` - new user registration
   - `POST /signin` - user authorization
 - `User` (`/` route)

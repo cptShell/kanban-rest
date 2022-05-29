@@ -19,7 +19,7 @@ import { ApiTags, ApiOperation, ApiResponse, ApiConsumes, ApiBody, ApiParam, Api
 import { Express } from 'express';
 import { diskStorage } from 'multer';
 
-import { AuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { FileFastifyInterceptor } from './files.interceptor';
 import { FileService } from './files.service';
 import { SaveFileDto } from './dto/save-file.dto';
@@ -27,7 +27,7 @@ import { SaveFileDto } from './dto/save-file.dto';
 @ApiTags('Upload/Download file')
 @ApiBearerAuth('token')
 @Controller()
-@UseGuards(AuthGuard)
+@UseGuards(JwtAuthGuard)
 export class FileController {
   constructor(private fileService: FileService) {}
 
